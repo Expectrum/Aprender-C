@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <ctype.h>
+
+void main(){
+
+    char letra;
+
+    printf("Escribe una vocal para saber si permite el acento abierto en catalan: ");
+    scanf("%c", &letra);
+
+    letra = tolower(letra);
+
+    if(letra == 'a' || letra == 'e' || letra == 'i' || letra == 'o' || letra == 'u'){
+        if(letra == 'a' || letra == 'e' || letra == 'o'){
+            printf("\nEsta vocal permite el acento abierto\n");
+        }
+        else{
+            printf("\nEsta vocal no permite el acento abierto\n");
+        }
+
+    }
+    else{
+        printf("\nEscribe una vocal\n");
+
+        
+    }
+}
+
+getch();

@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <locale.h>
+#include <stdlib.h>
+
+void main(){
+
+    char signo;
+
+    printf("|===========================================|\n");
+    printf("|          Bienvenido a la quiniela         |\n");
+    printf("| El partido de hoy es Las Palmas - Levante |\n");
+    printf("| Ingrese 1 si esta a favor de Las Palmas   |\n");
+    printf("| Ingrese 2 si esta a favor del Levante     |\n");
+    printf("| Ingrese X si esta a favor del empate      |\n");
+    printf("|===========================================|\n");
+
+    printf("Porfavor ingrese aqui el caracter: ");
+    fflush(stdin);
+    scanf("%c", &signo);
+
+    switch(signo){
+        case '1':
+            printf("\nHa apostado a que ganan Las palmas");
+            break;
+
+        case '2':
+            printf("\nHa apostado a que gana el Levante");
+            break;
+
+        case 'X':
+        case 'x':
+            printf("\nHa apostado por el empate");
+            break;
+
+        default:
+            printf("\nPorvafor, ingrese un caracter valido");
+    }
+}
