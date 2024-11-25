@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int calcPalillos( int numero){
+    int palillos [] = {6, 2, 5, 5, 4, 5, 6, 3, 7, 6}; //libreria con el numero de palillos necesarios para los numeros 0-9 en orden
+    return palillos[numero];
+}
+
+int main(){
+    int numero;
+    int mod, resultado, totalPalillos;
+
+    printf("Entra un numero entero entre 0 y 99: "); //pedimos la entrada de los datos
+    scanf("%d", &numero);
+    
+    //hacemos un if especialmente para los menores de 10 ya que no hace falta hacer una división
+    if(numero < 0 || numero >9){ //validamos la entrada
+        printf("Numero no valido\n");
+    }
+    else{
+        printf("El numero de palillos necesarios son: %d\n",calcPalillos(numero));
+    }
+    
+    //if para los mayores de 9 y menores de 100
+    if(numero > 99){ //validamos la entrada
+        printf("Numero no valido, debe de ser menor a 100\n");
+    }
+    else{
+        resultado = numero / 10; //calculamos las decenas
+        mod = numero % 10; //calculamos las unidades
+
+        //calculamos la suma total de los palillos necesarios
+        totalPalillos = calcPalillos(resultado) + calcPalillos(mod);
+
+        printf("El total de palillos necesarios es: %d\n", totalPalillos);
+
+    }
+}
